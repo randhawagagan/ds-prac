@@ -1,3 +1,11 @@
+/* Reverse an array */
+function reverse(str){
+return str.split('').reverse().join(''); 
+}
+reverse('My name is Gagan')
+
+/* Implementing an array  
+
 class MyArray{
   constructor(){
     this.length = 0;
@@ -38,3 +46,4 @@ myarr.push("jot")
 myarr.push("randhawa")
 myarr.delete(1);
 console.log(myarr)
+*/
