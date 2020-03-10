@@ -1,8 +1,19 @@
-/* Reverse an array */
+ /* Hash Tables  */
+
+
+
+ /* Merge Sorted arrays */
+
+
+
+
+
+/* Reverse an array 
 function reverse(str){
 return str.split('').reverse().join(''); 
 }
 reverse('My name is Gagan')
+*/
 
 /* Implementing an array  
 
