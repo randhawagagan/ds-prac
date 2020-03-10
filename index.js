@@ -1,6 +1,43 @@
+/*
+Google question forst recurring character
+
+*/ 
+//Given an array = [2,5,1,2,3,5,1,2,4]:
+//It should return 2
+
+//Given an array = [2,1,1,2,3,5,1,2,4]:
+//It should return 1
+
+//Given an array = [2,3,4,5]:
+//It should return undefined
+
+
+function firstRecurringCharacter(input){
+    if(!input || input.length <= 1 ){
+      return undefined;
+    }
+    let map = new Map();
+    for(let i=0; i<input.length; i++){
+      //console.log(input[i])
+        if(map.has(input[i])){
+          return input[i]
+        }
+        map.set(input[i])
+    }
+}
+const array = [2,5,1,2,3,5,1,2,4];
+console.log(firstRecurringCharacter([2,1,1,2,3,5,1,2,4]))
+
+//Bonus... What if we had this:
+// [2,5,5,2,3,5,1,2,4]
+// return 5 because the pairs are before 2,2
+
+
+
+
  /* Hash Tables
  Downside of Hash table is that if we want all keys , it iterates over full lengthh to find out keys as its unordered.
-   */
+
  class HashTable{
   constructor(size){
     this.data = new Array(size);
@@ -36,15 +73,25 @@
     }
 
     keys(){
-      let array = [];
-
-      for(let i=0; i<this.data.length ;i++){
-        if(this.data[i]){
-        array.push(this.data[i][0][0])
+         if (!this.data.length) {
+      return undefined
+    }
+    let result = []
+    // loop through all the elements
+    for (let i = 0; i < this.data.length; i++) {
+        // if it's not an empty memory cell
+        if (this.data[i] && this.data[i].length) {
+          // but also loop through all the potential collisions
+          if (this.data.length > 1) {
+            for (let j = 0; j < this.data[i].length; j++) {
+              result.push(this.data[i][j][0])
+            }
+          } else {
+            result.push(this.data[i][0])
+          } 
         }
-        
-      }
-      return array
+    }
+    return result; 
     }
   }
 const myHash = new HashTable(50);
@@ -54,8 +101,13 @@ myHash.set('g', 1003333);
 myHash.get('grapes');
 myHash.get('g');
 myHash.keys()
+*/
+
+
+
 
  /* Merge Sorted arrays */
+
 
 
 
