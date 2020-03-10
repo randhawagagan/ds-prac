@@ -1,8 +1,11 @@
- /* Hash Tables  */
+ /* Hash Tables
+ Downside of Hash table is that if we want all keys , it iterates over full lengthh to find out keys as its unordered.
+   */
  class HashTable{
   constructor(size){
     this.data = new Array(size);
   }
+
    _hash(key) {
     let hash = 0;
     for(let i=0; i<key.length;i++){
@@ -10,6 +13,7 @@
     }
     return hash;
     }
+
     get(key){
       let address = this._hash(key);
       const currentBucket = this.data[address];
@@ -21,6 +25,7 @@
         return undefined
       }
     }
+
     set(key, value){
       let address = this._hash(key);
       if(!this.data[address]){
@@ -29,6 +34,18 @@
       this.data[address].push([key,value])
       return this.data;
     }
+
+    keys(){
+      let array = [];
+
+      for(let i=0; i<this.data.length ;i++){
+        if(this.data[i]){
+        array.push(this.data[i][0][0])
+        }
+        
+      }
+      return array
+    }
   }
 const myHash = new HashTable(50);
 myHash._hash("gagsan");
@@ -36,6 +53,7 @@ myHash.set('grapes', 100);
 myHash.set('g', 1003333);
 myHash.get('grapes');
 myHash.get('g');
+myHash.keys()
 
  /* Merge Sorted arrays */
 
