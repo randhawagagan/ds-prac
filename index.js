@@ -1,3 +1,77 @@
+/*LINKED LISTS 
+12--> 5 --> 8 --> null
+*/
+// let linkedList = {
+//   head : {
+//     value: 12,
+//     next: {
+//       //pointer to next
+//       value: 5, 
+//       next: {
+//         value: 8,
+//         next : null
+//       }
+//     }
+//   }
+// }
+
+class Node{
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList{
+  constructor(value){
+    this.head = {
+      value: value,
+      next: null
+    }
+    this.tail = this.head;
+    this.length = 1
+  }
+
+  append(value){
+   const newNode = {
+     value : value,
+     next: null
+   }
+   this.tail.next = newNode;
+   this.tail = newNode;
+   this.length++
+   return this;
+  }
+
+ prepend(value){
+   const newNode = {
+     value : value,
+     next: null
+   }
+   newNode.next = this.head;
+   this.head = newNode;
+   this.length++
+   return this;
+  }
+
+  printList(){
+    const llarray = [];
+    let currentNode = this.head;
+    while(currentNode !== null){
+llarray.push(currentNode.value);
+currentNode = currentNode.next;
+    }
+    return llarray;
+  }
+
+}
+const LL = new LinkedList(12);
+LL.append(5);
+LL.append(16);
+LL.append(17);
+LL.prepend(4)
+LL.printList();
+
 /*
 Google question forst recurring character
 
@@ -12,21 +86,21 @@ Google question forst recurring character
 //It should return undefined
 
 
-function firstRecurringCharacter(input){
-    if(!input || input.length <= 1 ){
-      return undefined;
-    }
-    let map = new Map();
-    for(let i=0; i<input.length; i++){
-      //console.log(input[i])
-        if(map.has(input[i])){
-          return input[i]
-        }
-        map.set(input[i])
-    }
-}
-const array = [2,5,1,2,3,5,1,2,4];
-console.log(firstRecurringCharacter([2,5,5,2,3,5,1,2,4]))
+// function firstRecurringCharacter(input){
+//     if(!input || input.length <= 1 ){
+//       return undefined;
+//     }
+//     let map = new Map();
+//     for(let i=0; i<input.length; i++){
+//       //console.log(input[i])
+//         if(map.has(input[i])){
+//           return input[i]
+//         }
+//         map.set(input[i])
+//     }
+// }
+// const array = [2,5,1,2,3,5,1,2,4];
+// console.log(firstRecurringCharacter([2,5,5,2,3,5,1,2,4]))
 
 
 
