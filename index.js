@@ -1,4 +1,4 @@
-/*LINKED LISTS 
+/*LINKED LISTS and 
 12--> 5 --> 8 --> null
 */
 // let linkedList = {
@@ -12,9 +12,27 @@
 //         next : null
 //       }
 //     }
-//   }
+//   }//
 // }
+/*LINKED LISTS and 
+12--> 5 --> 8 --> null
+*/
+// let linkedList = {
+//   head : {
+//     value: 12,
+//     next: {
+//       //pointer to next
+//       value: 5, 
+//       next: {
+//         value: 8,
+//         next : null
+//       }
+//     }
+//   }//
+// }
+class Test{
 
+}
 class Node{
   constructor(value){
     this.value = value;
